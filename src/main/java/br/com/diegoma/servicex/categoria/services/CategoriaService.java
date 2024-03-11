@@ -28,3 +28,4 @@ public class CategoriaService {
         categoriaRepository.deleteById(idCategoria);
     }
 }
+
