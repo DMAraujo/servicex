@@ -35,7 +35,7 @@ public class CategoriaResource {
         categoriaService.deletarCategoria(idCategoria);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
-    @PutMapping
+    @PutMapping("{idCategoria}")
     public ResponseEntity<Categoria> atualizarCategoria(
             @PathVariable Integer idCategoria,
             @RequestBody Categoria categoria) {

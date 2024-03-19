@@ -1,6 +1,7 @@
 package br.com.diegoma.servicex.categoria.domain;
 
 import br.com.diegoma.servicex.servico.domain.Servico;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -19,6 +20,7 @@ public class Categoria {
     private Integer idCategoria;
     @Column(name = "NOME_CATEGORIA")
     private String nomeCategoria;
+    @JsonIgnore
     @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
     @Column(name = "SERVICOS")
     private List<Servico> servicos;
