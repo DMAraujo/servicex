@@ -26,18 +26,18 @@ public class ServicoResource {
         List<Servico> servicos = servicoService.listarServico();
         return new ResponseEntity<>(servicos, HttpStatus.OK);
     }
-    @GetMapping("/{idCategoria}")
+    @GetMapping("/{idServico}")
     public ResponseEntity<Servico> buscarServico(@PathVariable Integer idServico) {
         return servicoService.buscarServicoPorId(idServico)
                 .map(servico -> new ResponseEntity(servico, HttpStatus.OK))
                 .orElseGet(() -> new ResponseEntity(HttpStatus.NOT_FOUND));
     }
-    @DeleteMapping("/{idCategoria}")
+    @DeleteMapping("/{idServico}")
     public ResponseEntity<Void> deletarServico(@PathVariable Integer idServico) {
         servicoService.deletarServico(idServico);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
-    @PutMapping("/{idCategoria}")
+    @PutMapping("/{idServico}")
     public ResponseEntity<Servico> atualizarServico(
             @PathVariable Integer idServico,
             @RequestBody Servico servico) {
