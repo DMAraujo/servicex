@@ -1,8 +1,12 @@
 package br.com.diegoma.servicex.servico.domain;
 
 import br.com.diegoma.servicex.categoria.domain.Categoria;
+//import br.com.diegoma.servicex.ordemservico.domain.OrdemServico;
+//import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 
 @Getter
 @Setter
@@ -22,4 +26,9 @@ public class Servico {
     @ManyToOne
     @JoinColumn(name = "idCategoria")
     private Categoria categoria;
+    /*
+    @JsonIgnore
+    @ManyToMany(mappedBy = "servicos")
+    private List<OrdemServico> ordemServicos;
+    */
 }
